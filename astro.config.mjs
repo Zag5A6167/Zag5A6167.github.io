@@ -1,7 +1,7 @@
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://Zag5A6167.github.io',
-  base: '/',
-  outDir: './dist', 
+  site: 'https://zag5a6167.github.io',
+  base: '/', 
 });
