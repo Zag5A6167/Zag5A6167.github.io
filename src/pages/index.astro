@@ -1,0 +1,369 @@
+---
+// Spartan Portfolio: Deep Sea 10 Layers + Responsive & Pixel-Perfect Duck (2026)
+---
+
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Deep Sea Portfolio | Responsive Duck</title>
+  </head>
+  <body>
+    <main class="snap-container" id="mainScroll">
+      <section class="page layer-1">
+        <div class="pixel-content fade-in">
+          <h1 class="pixel-text">LEVEL 1</h1>
+          <h2 class="pixel-text">SUNLIGHT ZONE</h2>
+          <div class="pixel-arrow">▼</div>
+        </div>
+
+        <div class="char-container">
+          <img src="/duck.png" alt="Duck" class="duck-char" />
+        </div>
+      </section>
+
+      <section class="page layer-2">
+        <div class="content reveal">
+          <h1 class="section-title">COLLECTION</h1>
+          <div class="slider-wrapper">
+            <button class="nav-btn prev" id="prevBtn">❮</button>
+            <button class="nav-btn next" id="nextBtn">❯</button>
+            <div class="horizontal-snap" id="artSlider">
+              <div class="art-card">
+                <div class="art-placeholder shadow-abyss">
+                  <span>1</span>
+                </div>
+              </div>
+              <div class="art-card">
+                <div class="art-placeholder shadow-abyss">
+                  <span>2</span>
+                </div>
+              </div>
+              <div class="art-card">
+                <div class="art-placeholder shadow-abyss">
+                  <span>3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page layer-3">
+        <div class="content reveal">
+          <h1 class="section-title">MIDNIGHT ZONE</h1><p class="desc">1,000m</p>
+        </div>
+      </section>
+      <section class="page layer-4">
+        <div class="content reveal">
+          <h1 class="section-title">THE ABYSS</h1><p class="desc">3,000m</p>
+        </div>
+      </section>
+      <section class="page layer-5">
+        <div class="content reveal">
+          <h1 class="section-title">HADAL ZONE</h1><p class="desc">5,000m</p>
+        </div>
+      </section>
+      <section class="page layer-6">
+        <div class="content reveal">
+          <h1 class="section-title">TRENCHES</h1><p class="desc">7,000m</p>
+        </div>
+      </section>
+      <section class="page layer-7">
+        <div class="content reveal">
+          <h1 class="section-title">PRESSURE</h1><p class="desc">8,000m</p>
+        </div>
+      </section>
+      <section class="page layer-8">
+        <div class="content reveal">
+          <h1 class="section-title">DEEP CORE</h1><p class="desc">9,000m</p>
+        </div>
+      </section>
+      <section class="page layer-9">
+        <div class="content reveal">
+          <h1 class="section-title">SINGULARITY</h1><p class="desc">9,500m</p>
+        </div>
+      </section>
+
+      <section class="page layer-10">
+        <div class="content reveal">
+          <h1 class="section-title">ติดต่อฉัน</h1>
+          <div class="contact-box">
+            <p>MISSION ACCOMPLISHED</p>
+            <div class="links">
+              <a href="#">GITHUB</a> 
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+        font-family: "Inter", sans-serif;
+      }
+      .snap-container {
+        height: 100vh;
+        overflow-y: scroll;
+        snap-type: y mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+      }
+      .snap-container::-webkit-scrollbar {
+        display: none;
+      }
+      .page {
+        height: 100vh;
+        width: 100%;
+        snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: white;
+        overflow: hidden;
+      }
+
+      /* --- 2. THE 10-LAYER GRADIENT --- */
+      .layer-1 {
+        background: #00aaff;
+        font-family: "Press Start 2P", cursive;
+      }
+      .layer-2 {
+        background: linear-gradient(to bottom, #00aaff, #0088cc);
+      }
+      .layer-3 {
+        background: linear-gradient(to bottom, #0088cc, #005588);
+      }
+      .layer-4 {
+        background: linear-gradient(to bottom, #005588, #003366);
+      }
+      .layer-5 {
+        background: linear-gradient(to bottom, #003366, #002244);
+      }
+      .layer-6 {
+        background: linear-gradient(to bottom, #002244, #001122);
+      }
+      .layer-7 {
+        background: linear-gradient(to bottom, #001122, #000811);
+      }
+      .layer-8 {
+        background: linear-gradient(to bottom, #000811, #00050a);
+      }
+      .layer-9 {
+        background: linear-gradient(to bottom, #00050a, #000205);
+      }
+      .layer-10 {
+        background: #000;
+      }
+
+      .char-container {
+        position: absolute;
+        right: 10%;
+        bottom: 15%;
+        width: 15vw;
+        max-width: 180px;
+        min-width: 100px;
+        z-index: 5;
+        pointer-events: none;
+      }
+
+      .duck-char {
+        width: 100%;
+        height: auto;
+        transform: scale(0);
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+
+      @media (max-width: 768px) {
+        .char-container {
+          right: 50%;
+          transform: translateX(50%);
+          bottom: 8%;
+          width: 30vw;
+          max-width: 120px;
+        }
+
+        .pixel-text {
+          font-size: 1.5rem;
+        }
+      }
+
+      .layer-1.active .duck-char {
+        transform: scale(1);
+        opacity: 1;
+        animation: duckWobble 2.5s ease-in-out infinite;
+        animation-delay: 0.8s;
+      }
+
+      @keyframes duckWobble {
+        0%,
+        100% {
+          transform: rotate(-9deg) translateY(0);
+        }
+        50% {
+          transform: rotate(6deg) translateY(-12px);
+        }
+      }
+
+      .pixel-text {
+        color: #fff;
+        text-shadow: 4px 4px 0px #000;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .pixel-arrow {
+        font-size: 20px;
+        animation: pixelBounce 1s steps(4) infinite;
+        margin-top: 20px;
+      }
+      @keyframes pixelBounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+      }
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      .desc {
+        opacity: 0.4;
+        font-family: monospace;
+      }
+
+      .slider-wrapper {
+        position: relative;
+        width: 90vw;
+        max-width: 850px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .art-placeholder {
+        width: 85%;
+        aspect-ratio: 16/9;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 1.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .shadow-abyss {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      }
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 20;
+        color: #000;
+        font-size: 1rem;
+      }
+      .prev {
+        left: -10px;
+      }
+      .next {
+        right: -10px;
+      }
+      .horizontal-snap {
+        display: flex;
+        overflow-x: auto;
+        snap-type: x mandatory;
+        scroll-behavior: smooth;
+        width: 100%;
+        scrollbar-width: none;
+      }
+      .horizontal-snap::-webkit-scrollbar {
+        display: none;
+      }
+      .art-card {
+        min-width: 100%;
+        snap-align: center;
+        display: flex;
+        justify-content: center;
+      }
+      .links a {
+        color: #38bdf8;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: 1s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+    <script>
+      const artSlider = document.getElementById("artSlider");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
+
+      if (artSlider && nextBtn && prevBtn) {
+        nextBtn.addEventListener("click", () => {
+          artSlider.scrollBy({
+            left: artSlider.offsetWidth,
+            behavior: "smooth",
+          });
+        });
+        prevBtn.addEventListener("click", () => {
+          artSlider.scrollBy({
+            left: -artSlider.offsetWidth,
+            behavior: "smooth",
+          });
+        });
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              entry.target
+                .querySelectorAll(".reveal")
+                .forEach((el) => el.classList.add("active"));
+            }
+          });
+        },
+        { threshold: 0.4 },
+      );
+
+      document
+        .querySelectorAll(".page")
+        .forEach((page) => observer.observe(page));
+    </script>
+  </body>
+</html>
