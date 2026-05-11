@@ -1,366 +1,266 @@
+---
+// index.astro
+---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="th">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Deep Sea Portfolio | Responsive Duck</title>
-  </head>
-  <body>
-    <main class="snap-container" id="mainScroll">
-      <section class="page layer-1">
-        <div class="pixel-content fade-in">
-          <h1 class="pixel-text">LEVEL 1</h1>
-          <h2 class="pixel-text">SUNLIGHT ZONE</h2>
-          <div class="pixel-arrow">▼</div>
-        </div>
-
-        <div class="char-container">
-          <img src="/duck.png" alt="Duck" class="duck-char" />
-        </div>
-      </section>
-
-      <section class="page layer-2">
-        <div class="content reveal">
-          <h1 class="section-title">COLLECTION</h1>
-          <div class="slider-wrapper">
-            <button class="nav-btn prev" id="prevBtn">❮</button>
-            <button class="nav-btn next" id="nextBtn">❯</button>
-            <div class="horizontal-snap" id="artSlider">
-              <div class="art-card">
-                <div class="art-placeholder shadow-abyss">
-                  <span>1</span>
-                </div>
-              </div>
-              <div class="art-card">
-                <div class="art-placeholder shadow-abyss">
-                  <span>2</span>
-                </div>
-              </div>
-              <div class="art-card">
-                <div class="art-placeholder shadow-abyss">
-                  <span>3</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="page layer-3">
-        <div class="content reveal">
-          <h1 class="section-title">MIDNIGHT ZONE</h1><p class="desc">1,000m</p>
-        </div>
-      </section>
-      <section class="page layer-4">
-        <div class="content reveal">
-          <h1 class="section-title">THE ABYSS</h1><p class="desc">3,000m</p>
-        </div>
-      </section>
-      <section class="page layer-5">
-        <div class="content reveal">
-          <h1 class="section-title">HADAL ZONE</h1><p class="desc">5,000m</p>
-        </div>
-      </section>
-      <section class="page layer-6">
-        <div class="content reveal">
-          <h1 class="section-title">TRENCHES</h1><p class="desc">7,000m</p>
-        </div>
-      </section>
-      <section class="page layer-7">
-        <div class="content reveal">
-          <h1 class="section-title">PRESSURE</h1><p class="desc">8,000m</p>
-        </div>
-      </section>
-      <section class="page layer-8">
-        <div class="content reveal">
-          <h1 class="section-title">DEEP CORE</h1><p class="desc">9,000m</p>
-        </div>
-      </section>
-      <section class="page layer-9">
-        <div class="content reveal">
-          <h1 class="section-title">SINGULARITY</h1><p class="desc">9,500m</p>
-        </div>
-      </section>
-
-      <section class="page layer-10">
-        <div class="content reveal">
-          <h1 class="section-title">ติดต่อฉัน</h1>
-          <div class="contact-box">
-            <p>MISSION ACCOMPLISHED</p>
-            <div class="links">
-              <a href="#">GITHUB</a> 
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Game Programmer Status | Zag x Bit Egg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-        background: #000;
-        font-family: "Inter", sans-serif;
-      }
-      .snap-container {
-        height: 100vh;
-        overflow-y: scroll;
-        snap-type: y mandatory;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-      }
-      .snap-container::-webkit-scrollbar {
-        display: none;
-      }
-      .page {
-        height: 100vh;
-        width: 100%;
-        snap-align: start;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        color: white;
-        overflow: hidden;
-      }
-
-      
-      .layer-1 {
-        background: #00aaff;
-        font-family: "Press Start 2P", cursive;
-      }
-      .layer-2 {
-        background: linear-gradient(to bottom, #00aaff, #0088cc);
-      }
-      .layer-3 {
-        background: linear-gradient(to bottom, #0088cc, #005588);
-      }
-      .layer-4 {
-        background: linear-gradient(to bottom, #005588, #003366);
-      }
-      .layer-5 {
-        background: linear-gradient(to bottom, #003366, #002244);
-      }
-      .layer-6 {
-        background: linear-gradient(to bottom, #002244, #001122);
-      }
-      .layer-7 {
-        background: linear-gradient(to bottom, #001122, #000811);
-      }
-      .layer-8 {
-        background: linear-gradient(to bottom, #000811, #00050a);
-      }
-      .layer-9 {
-        background: linear-gradient(to bottom, #00050a, #000205);
-      }
-      .layer-10 {
-        background: #000;
-      }
-
-      .char-container {
-        position: absolute;
-        right: 10%;
-        bottom: 15%;
-        width: 15vw;
-        max-width: 180px;
-        min-width: 100px;
-        z-index: 5;
-        pointer-events: none;
-      }
-
-      .duck-char {
-        width: 100%;
-        height: auto;
-        transform: scale(0);
-        opacity: 0;
-        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-        image-rendering: pixelated;
-        image-rendering: crisp-edges;
-      }
-
-      @media (max-width: 768px) {
-        .char-container {
-          right: 50%;
-          transform: translateX(50%);
-          bottom: 8%;
-          width: 30vw;
-          max-width: 120px;
+        :root {
+            --egg-yolk: #FFB800;
+            --egg-white: #FFFFFF;
+            --bg-soft: #F4F7F6;
+            --text-dark: #2D2D2D;
+            --text-mute: #A0A0A0;
+            --bit-red: #E63946;
         }
 
-        .pixel-text {
-          font-size: 1.5rem;
-        }
-      }
+        * { box-sizing: border-box; }
 
-      .layer-1.active .duck-char {
-        transform: scale(1);
-        opacity: 1;
-        animation: duckWobble 2.5s ease-in-out infinite;
-        animation-delay: 0.8s;
-      }
-
-      @keyframes duckWobble {
-        0%,
-        100% {
-          transform: rotate(-9deg) translateY(0);
+        body {
+            margin: 0;
+            background-color: var(--bg-soft);
+            color: var(--text-dark);
+            font-family: 'Anuphan', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* บังคับหน้าเดียว */
+            overflow: hidden; 
         }
-        50% {
-          transform: rotate(6deg) translateY(-12px);
-        }
-      }
 
-      .pixel-text {
-        color: #fff;
-        text-shadow: 4px 4px 0px #000;
-        font-size: 1.5rem;
-        text-align: center;
-      }
-      .pixel-arrow {
-        font-size: 20px;
-        animation: pixelBounce 1s steps(4) infinite;
-        margin-top: 20px;
-      }
-      @keyframes pixelBounce {
-        0%,
-        100% {
-          transform: translateY(0);
+        .card {
+            width: 95%;
+            max-width: 420px;
+            height: 92vh; /* กระชับพื้นที่ */
+            background: var(--egg-white);
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.02);
         }
-        50% {
-          transform: translateY(10px);
+
+        /* --- New Horizontal Progress Bar --- */
+        .progress-container {
+            width: 100%;
+            margin-bottom: 15px;
         }
-      }
-      .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        font-weight: 700;
-      }
-      .desc {
-        opacity: 0.4;
-        font-family: monospace;
-      }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--egg-yolk);
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-      .slider-wrapper {
-        position: relative;
-        width: 90vw;
-        max-width: 850px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .art-placeholder {
-        width: 85%;
-        aspect-ratio: 16/9;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 1.9rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .shadow-abyss {
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      }
-      .nav-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: white;
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 20;
-        color: #000;
-        font-size: 1rem;
-      }
-      .prev {
-        left: -10px;
-      }
-      .next {
-        right: -10px;
-      }
-      .horizontal-snap {
-        display: flex;
-        overflow-x: auto;
-        snap-type: x mandatory;
-        scroll-behavior: smooth;
-        width: 100%;
-        scrollbar-width: none;
-      }
-      .horizontal-snap::-webkit-scrollbar {
-        display: none;
-      }
-      .art-card {
-        min-width: 100%;
-        snap-align: center;
-        display: flex;
-        justify-content: center;
-      }
-      .links a {
-        color: #38bdf8;
-        text-decoration: none;
-        font-weight: bold;
-      }
+        .progress-bar-bg {
+            width: 100%;
+            height: 12px;
+            background: #eee;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
 
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: 1s ease-out;
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%; /* ปรับผ่าน JS */
+            background: linear-gradient(90deg, var(--egg-yolk), #FFD600);
+            border-radius: 50px;
+            transition: width 1s ease-in-out;
+        }
+
+        .brand { font-size: 2rem; margin-bottom: 5px; }
+        .user-tag {
+            font-family: 'JetBrains Mono';
+            font-size: 0.65rem;
+            color: var(--egg-yolk);
+            background: rgba(255, 184, 0, 0.1);
+            padding: 3px 12px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        h1 { font-size: 1.4rem; margin: 5px 0; }
+        .sent-date-label { font-size: 0.75rem; color: #777; margin-bottom: 10px; display: block; }
+
+        .status-box {
+            background: #FFF2F2;
+            border: 1px solid var(--bit-red);
+            padding: 12px;
+            border-radius: 18px;
+            margin-bottom: 10px;
+        }
+
+        .status-title {
+            color: var(--bit-red);
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        /* --- Compact Calendar --- */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin: 10px 0;
+        }
+
+        .day-item {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #F9F9F9;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: #555;
+            position: relative;
+        }
+
+        .day-item.passed::after {
+            content: "✕";
+            position: absolute;
+            font-size: 0.9rem;
+            color: rgba(255, 0, 0, 0.15);
+        }
+
+        .day-item.today { border: 2px solid var(--egg-yolk); background: #FFF; font-weight: bold; }
+
+        .day-item.danger-zone {
+            background-color: var(--bit-red) !important;
+            color: white !important;
+        }
+
+        .m-tag { font-size: 0.4rem; opacity: 0.7; }
+
+        /* --- Footer Timer --- */
+        .timer-box { border-top: 1px solid #F0F0F0; padding-top: 15px; }
+        .time-main { font-size: 2rem; font-weight: 600; line-height: 1; }
+        .time-sub { font-family: 'JetBrains Mono'; font-size: 0.9rem; color: var(--egg-yolk); }
+        .footer-note { font-size: 0.6rem; color: var(--text-mute); margin-top: 5px; text-transform: uppercase; }
     </style>
+</head>
+<body>
 
-    <script>
-      const artSlider = document.getElementById("artSlider");
-      const nextBtn = document.getElementById("nextBtn");
-      const prevBtn = document.getElementById("prevBtn");
+<div class="card">
+    <div class="top-section">
+        <div class="brand">🥚</div>
+        <div class="user-tag">GAME PROGRAMMER INTERN</div>
+        
+        <div class="progress-container">
+            <div class="progress-label">
+                <span>RECRUITMENT PROGRESS</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+        </div>
 
-      if (artSlider && nextBtn && prevBtn) {
-        nextBtn.addEventListener("click", () => {
-          artSlider.scrollBy({
-            left: artSlider.offsetWidth,
-            behavior: "smooth",
-          });
-        });
-        prevBtn.addEventListener("click", () => {
-          artSlider.scrollBy({
-            left: -artSlider.offsetWidth,
-            behavior: "smooth",
-          });
-        });
-      }
+        <h1>จะรอดไม่รอด?</h1>
+        <span class="sent-date-label">ส่งเมื่อ: <strong>8 พฤษภาคม</strong></span>
+    </div>
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("active");
-              entry.target
-                .querySelectorAll(".reveal")
-                .forEach((el) => el.classList.add("active"));
-            }
-          });
-        },
-        { threshold: 0.4 },
-      );
+    <div class="status-box">
+        <span class="status-title" id="next-action-text">รอลุ้นผล</span>
+        <span style="font-size: 0.65rem; color: #666;">ช่วงตัดสิน (Red Zone): 22 พ.ค. - 5 มิ.ย.</span>
+    </div>
 
-      document
-        .querySelectorAll(".page")
-        .forEach((page) => observer.observe(page));
-    </script>
-  </body>
+    <div class="calendar-grid" id="calendar-grid"></div>
+
+    <div class="timer-box">
+        <div class="time-main" id="time-main">00d 00h</div>
+        <div class="time-sub" id="time-sub">00m 00s</div>
+        <div class="footer-note">Time Remaining to 4-Week Deadline</div>
+    </div>
+</div>
+
+<script>
+    const sentDate = 8;
+    const week2Start = 22; 
+    const totalDays = 36; 
+    const deadlineTS = new Date("June 5, 2026 23:59:59").getTime();
+    const totalDurationDays = 28; // ระยะเวลาลุ้นทั้งหมด 4 สัปดาห์
+
+    function render() {
+        const grid = document.getElementById('calendar-grid') as HTMLElement;
+        const nextAction = document.getElementById('next-action-text') as HTMLElement;
+        const progressFill = document.getElementById('progress-fill') as HTMLElement;
+        const progressPercent = document.getElementById('progress-percent') as HTMLElement;
+        
+        if (!grid || !nextAction || !progressFill || !progressPercent) return;
+
+        const now = new Date();
+        const todayDay = now.getDate(); 
+        const todayMonth = now.getMonth(); 
+
+        grid.innerHTML = '';
+
+        for (let i = sentDate; i <= totalDays; i++) {
+            let d = i;
+            let m = "พ.ค.";
+            let isJune = false;
+            if (i > 31) { d = i - 31; m = "มิ.ย."; isJune = true; }
+
+            const dayDiv = document.createElement('div');
+            dayDiv.className = 'day-item';
+            dayDiv.innerHTML = `<span>${d}</span><span class="m-tag">${m}</span>`;
+
+            const isPast = (!isJune && i < todayDay && todayMonth === 4) || (todayMonth > 4);
+            const isToday = (!isJune && i === todayDay && todayMonth === 4);
+
+            if (isPast) dayDiv.classList.add('passed');
+            if (isToday) dayDiv.classList.add('today');
+            if (i >= week2Start) dayDiv.classList.add('danger-zone');
+            
+            grid.appendChild(dayDiv);
+        }
+
+        // คำนวณความคืบหน้า (Progress)
+        let elapsed = 0;
+        if (todayMonth === 4 && todayDay >= sentDate) elapsed = todayDay - sentDate;
+        else if (todayMonth > 4) elapsed = (31 - sentDate) + todayDay;
+        
+        const progress = Math.min(Math.max((elapsed / totalDurationDays) * 100, 0), 100);
+        progressPercent.innerText = `${Math.floor(progress)}%`;
+        progressFill.style.width = `${progress}%`;
+        
+        nextAction.innerText = (todayMonth === 4 && todayDay < week2Start) ? "รอลุ้นผล: Game Programmer" : "รอด หรือ ไม่รอด!?";
+    }
+
+    function updateTimer() {
+        const diff = deadlineTS - new Date().getTime();
+        const tm = document.getElementById('time-main') as HTMLElement;
+        const ts = document.getElementById('time-sub') as HTMLElement;
+
+        if (diff > 0 && tm && ts) {
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            const s = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            tm.innerText = `${d}d ${h}h`;
+            ts.innerText = `${m}m ${s}s`;
+        }
+    }
+
+    render();
+    setInterval(updateTimer, 1000);
+    updateTimer();
+</script>
+
+</body>
 </html>
